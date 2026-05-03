@@ -33,7 +33,6 @@
       overflow-x: hidden;
     }
 
-    /* AUTH SCREEN */
     #auth-screen {
       min-height: 100vh;
       display: flex;
@@ -52,41 +51,27 @@
       -webkit-text-fill-color: transparent;
       margin-bottom: 0.5rem;
     }
-    .auth-sub {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 3rem;
-      text-align: center;
-    }
+    .auth-sub { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; text-align: center; }
+    .auth-loading { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; display: none; }
     .google-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: white;
-      color: #333;
-      border: none;
-      border-radius: 50px;
-      padding: 14px 32px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
+      display: flex; align-items: center; gap: 12px;
+      background: white; color: #333; border: none;
+      border-radius: 50px; padding: 14px 32px;
+      font-size: 1rem; font-weight: 500; cursor: pointer;
       font-family: 'DM Sans', sans-serif;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     .google-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+    .google-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .google-icon { width: 22px; height: 22px; }
 
-    /* MAIN APP */
     #app { display: none; max-width: 480px; margin: 0 auto; padding: 0 0 100px; }
 
-    /* HEADER */
     .header {
       background: linear-gradient(135deg, #1a0a2e, #0f3460);
       padding: 2rem 1.5rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
     }
     .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
     .app-title { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; }
@@ -94,8 +79,7 @@
       width: 38px; height: 38px; border-radius: 50%;
       background: var(--accent);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 0.9rem; cursor: pointer;
-      overflow: hidden;
+      font-weight: 700; font-size: 0.9rem; cursor: pointer; overflow: hidden;
     }
     .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
     .date-bar { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
@@ -103,83 +87,47 @@
     .progress-bar-fill { height: 6px; border-radius: 50px; background: linear-gradient(90deg, var(--green), var(--yellow)); transition: width 0.5s ease; }
     .progress-label { display: flex; justify-content: space-between; margin-top: 6px; font-size: 0.78rem; color: var(--muted); }
 
-    /* STATS */
     .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 1.2rem 1.2rem 0; }
-    .stat-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 1rem;
-      text-align: center;
-      border: 1px solid var(--border);
-    }
+    .stat-card { background: var(--surface); border-radius: var(--radius); padding: 1rem; text-align: center; border: 1px solid var(--border); }
     .stat-val { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; }
     .stat-val.green { color: var(--green); }
     .stat-val.yellow { color: var(--yellow); }
     .stat-val.red { color: var(--accent); }
     .stat-lbl { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
 
-    /* SECTION */
     .section { padding: 1.2rem 1.2rem 0; }
     .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
+      font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 0.8rem;
     }
 
-    /* ADD HABIT */
     .add-row { display: flex; gap: 8px; margin-bottom: 1rem; }
     .add-row input {
-      flex: 1;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: 10px 18px;
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
+      flex: 1; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 50px; padding: 10px 18px; color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s;
     }
     .add-row input:focus { border-color: var(--accent); }
     .add-row input::placeholder { color: var(--muted); }
     .add-btn {
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 10px 18px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: transform 0.2s;
-      font-weight: 700;
+      background: var(--accent); color: white; border: none;
+      border-radius: 50px; padding: 10px 18px; font-size: 1.2rem;
+      cursor: pointer; transition: transform 0.2s; font-weight: 700;
     }
     .add-btn:hover { transform: scale(1.08); }
 
-    /* HABIT CARD */
     .habit-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.2rem;
-      margin-bottom: 10px;
-      transition: transform 0.2s;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 10px;
       animation: slideIn 0.3s ease;
     }
-    @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
     .habit-card.done { border-color: rgba(0,217,165,0.3); background: rgba(0,217,165,0.05); }
     .habit-main { display: flex; align-items: center; gap: 12px; }
     .check-circle {
-      width: 32px; height: 32px; border-radius: 50%;
-      border: 2px solid var(--muted);
+      width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--muted);
       display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      flex-shrink: 0;
-      font-size: 1rem;
+      cursor: pointer; transition: all 0.3s; flex-shrink: 0; font-size: 1rem;
     }
     .check-circle.done { background: var(--green); border-color: var(--green); }
     .habit-info { flex: 1; }
@@ -188,159 +136,88 @@
     .habit-meta { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
     .habit-actions { display: flex; gap: 6px; }
     .icon-btn {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 5px 10px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.2s;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      border-radius: 8px; padding: 5px 10px; font-size: 0.75rem;
+      color: var(--muted); cursor: pointer; transition: all 0.2s;
     }
     .icon-btn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
     .icon-btn.del:hover { background: rgba(233,69,96,0.2); color: var(--accent); border-color: var(--accent); }
 
-    /* WEEK DOTS */
     .week-row { display: flex; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
     .day-item { flex: 1; text-align: center; }
     .day-dot {
-      width: 28px; height: 28px; border-radius: 50%;
-      margin: 0 auto 3px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem;
+      width: 28px; height: 28px; border-radius: 50%; margin: 0 auto 3px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; font-size: 0.7rem;
     }
     .day-dot.filled { background: var(--green); border-color: var(--green); }
     .day-dot.today-dot { border-color: var(--yellow); }
     .day-name { font-size: 0.6rem; color: var(--muted); }
 
-    /* REMINDER */
-    .reminder-row { margin-top: 10px; display: flex; gap: 8px; align-items: center; display: none; }
+    .reminder-row { margin-top: 10px; display: none; gap: 8px; align-items: center; flex-wrap: wrap; }
     .reminder-row.show { display: flex; }
     .time-input {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 6px 10px;
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
-      outline: none;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 6px 10px; color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; outline: none;
     }
     .set-reminder-btn {
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
+      background: var(--accent); color: white; border: none;
+      border-radius: 8px; padding: 6px 12px; font-size: 0.8rem;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
     }
     .reminder-badge {
-      font-size: 0.72rem;
-      background: rgba(233,69,96,0.15);
-      color: var(--accent);
-      border: 1px solid rgba(233,69,96,0.3);
-      border-radius: 6px;
-      padding: 2px 8px;
+      font-size: 0.72rem; background: rgba(233,69,96,0.15); color: var(--accent);
+      border: 1px solid rgba(233,69,96,0.3); border-radius: 6px; padding: 2px 8px;
     }
 
-    /* NOTE */
     .note-row { margin-top: 8px; display: none; }
     .note-row.show { display: block; }
     .note-row textarea {
-      width: 100%;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 12px;
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
-      resize: none;
-      outline: none;
-      min-height: 60px;
+      width: 100%; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 12px; color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; resize: none; outline: none; min-height: 60px;
     }
 
-    /* CHART */
-    .chart-wrap {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem;
-    }
+    .chart-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; }
     .chart-inner { position: relative; width: 100%; height: 160px; }
 
-    /* BOTTOM NAV */
     .bottom-nav {
-      position: fixed;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 100%; max-width: 480px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      display: flex;
-      padding: 10px 0;
-      z-index: 200;
+      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 100%; max-width: 480px; background: var(--surface);
+      border-top: 1px solid var(--border); display: flex; padding: 10px 0; z-index: 200;
     }
     .nav-item {
-      flex: 1; text-align: center;
-      cursor: pointer;
-      padding: 6px;
-      border-radius: 12px;
-      margin: 0 4px;
-      transition: background 0.2s;
+      flex: 1; text-align: center; cursor: pointer; padding: 6px;
+      border-radius: 12px; margin: 0 4px; transition: background 0.2s;
     }
     .nav-item.active { background: rgba(233,69,96,0.15); }
     .nav-icon { font-size: 1.3rem; }
     .nav-label { font-size: 0.65rem; color: var(--muted); margin-top: 2px; }
     .nav-item.active .nav-label { color: var(--accent); }
 
-    /* PAGES */
     .page { display: none; }
     .page.active { display: block; }
 
-    /* INSTALL BANNER */
     .install-banner {
-      margin: 1.2rem;
-      background: linear-gradient(135deg, var(--accent2), #1a0a2e);
-      border: 1px solid rgba(233,69,96,0.3);
-      border-radius: var(--radius);
-      padding: 1rem 1.2rem;
-      display: none;
-      align-items: center;
-      gap: 12px;
+      margin: 1.2rem; background: linear-gradient(135deg, var(--accent2), #1a0a2e);
+      border: 1px solid rgba(233,69,96,0.3); border-radius: var(--radius);
+      padding: 1rem 1.2rem; display: none; align-items: center; gap: 12px;
     }
     .install-banner.show { display: flex; }
     .install-text { flex: 1; font-size: 0.85rem; }
     .install-text strong { display: block; margin-bottom: 2px; }
     .install-text span { color: var(--muted); font-size: 0.78rem; }
     .install-now-btn {
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 8px 16px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      white-space: nowrap;
-      font-family: 'DM Sans', sans-serif;
+      background: var(--accent); color: white; border: none; border-radius: 50px;
+      padding: 8px 16px; font-size: 0.82rem; cursor: pointer;
+      white-space: nowrap; font-family: 'DM Sans', sans-serif;
     }
 
-    /* LOGOUT */
     .logout-btn {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      border-radius: 50px;
-      padding: 8px 20px;
-      font-size: 0.85rem;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      transition: all 0.2s;
-      margin-top: 1rem;
+      background: transparent; border: 1px solid var(--border); color: var(--muted);
+      border-radius: 50px; padding: 8px 20px; font-size: 0.85rem; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; transition: all 0.2s; margin-top: 1rem;
     }
     .logout-btn:hover { border-color: var(--accent); color: var(--accent); }
 
@@ -349,22 +226,20 @@
 
     .toast {
       position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
-      background: var(--green); color: #000;
-      padding: 10px 24px; border-radius: 50px;
-      font-size: 0.85rem; font-weight: 500;
-      opacity: 0; transition: opacity 0.3s;
-      z-index: 999; pointer-events: none;
+      background: var(--green); color: #000; padding: 10px 24px; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 500; opacity: 0; transition: opacity 0.3s;
+      z-index: 999; pointer-events: none; white-space: nowrap;
     }
     .toast.show { opacity: 1; }
   </style>
 </head>
 <body>
 
-<!-- AUTH SCREEN -->
 <div id="auth-screen">
   <div class="auth-logo">HabitZ</div>
   <div class="auth-sub">Apni zindagi badlo, ek aadat ek baar</div>
-  <button class="google-btn" onclick="signInWithGoogle()">
+  <div class="auth-loading" id="auth-loading">⏳ Login ho raha hai, rukho...</div>
+  <button class="google-btn" id="login-btn" onclick="signInWithGoogle()">
     <svg class="google-icon" viewBox="0 0 24 24">
       <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
       <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -375,10 +250,7 @@
   </button>
 </div>
 
-<!-- MAIN APP -->
 <div id="app">
-
-  <!-- HEADER -->
   <div class="header">
     <div class="header-top">
       <div class="app-title">⚡ HabitZ</div>
@@ -394,7 +266,6 @@
     </div>
   </div>
 
-  <!-- INSTALL BANNER -->
   <div class="install-banner" id="install-banner">
     <div class="install-text">
       <strong>📱 App Install Karo</strong>
@@ -403,42 +274,25 @@
     <button class="install-now-btn" onclick="installApp()">Install</button>
   </div>
 
-  <!-- PAGES -->
-  <!-- PAGE: HABITS -->
   <div class="page active" id="page-habits">
     <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-val green" id="s-done">0</div>
-        <div class="stat-lbl">aaj done</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val yellow" id="s-streak">🔥0</div>
-        <div class="stat-lbl">best streak</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val red" id="s-miss">0</div>
-        <div class="stat-lbl">miss aaj</div>
-      </div>
+      <div class="stat-card"><div class="stat-val green" id="s-done">0</div><div class="stat-lbl">aaj done</div></div>
+      <div class="stat-card"><div class="stat-val yellow" id="s-streak">🔥0</div><div class="stat-lbl">best streak</div></div>
+      <div class="stat-card"><div class="stat-val red" id="s-miss">0</div><div class="stat-lbl">miss aaj</div></div>
     </div>
-
     <div class="section">
       <div class="section-title">Nayi Habit</div>
       <div class="add-row">
         <input id="habit-input" placeholder="e.g. Paani 8 glass peena" />
         <button class="add-btn" onclick="addHabit()">+</button>
       </div>
-
       <div class="section-title">Aaj Ki Habits</div>
       <div id="habit-list">
-        <div class="empty-state">
-          <div class="empty-emoji">🌱</div>
-          <div>Koi habit nahi hai abhi<br/>Upar se add karo!</div>
-        </div>
+        <div class="empty-state"><div class="empty-emoji">🌱</div><div>Koi habit nahi hai abhi<br/>Upar se add karo!</div></div>
       </div>
     </div>
   </div>
 
-  <!-- PAGE: CHART -->
   <div class="page" id="page-chart">
     <div class="section" style="padding-top:1.2rem;">
       <div class="section-title">Is Hafte Ka Progress</div>
@@ -448,35 +302,25 @@
         </div>
       </div>
       <div style="margin-top:1rem;">
-        <div class="section-title">Aaj Tak Ki Summary</div>
+        <div class="section-title">Summary</div>
         <div class="stats-row" style="padding:0;">
-          <div class="stat-card">
-            <div class="stat-val green" id="c-total">0</div>
-            <div class="stat-lbl">total habits</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-val yellow" id="c-best">0🔥</div>
-            <div class="stat-lbl">best streak</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-val red" id="c-week">0%</div>
-            <div class="stat-lbl">is hafte</div>
-          </div>
+          <div class="stat-card"><div class="stat-val green" id="c-total">0</div><div class="stat-lbl">total habits</div></div>
+          <div class="stat-card"><div class="stat-val yellow" id="c-best">0🔥</div><div class="stat-lbl">best streak</div></div>
+          <div class="stat-card"><div class="stat-val red" id="c-week">0%</div><div class="stat-lbl">is hafte</div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PAGE: PROFILE -->
   <div class="page" id="page-profile">
     <div class="section" style="padding-top:1.5rem; text-align:center;">
       <div class="user-avatar" id="profile-avatar" style="width:72px;height:72px;font-size:1.5rem;margin:0 auto 1rem;">S</div>
       <div style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;" id="profile-name">User</div>
       <div style="color:var(--muted);font-size:0.85rem;margin-top:4px;" id="profile-email"></div>
-      <button class="logout-btn" onclick="signOut()">Logout karo</button>
+      <button class="logout-btn" onclick="doSignOut()">Logout karo</button>
     </div>
     <div class="section" style="margin-top:1.5rem;">
-      <div class="section-title">Notification Permission</div>
+      <div class="section-title">Notifications</div>
       <div class="chart-wrap" style="padding:1rem;">
         <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.8rem;">Reminder notifications ke liye permission do</p>
         <button class="set-reminder-btn" style="border-radius:50px;padding:10px 24px;font-size:0.9rem;" onclick="requestNotifPermission()">🔔 Notifications Allow Karo</button>
@@ -485,32 +329,28 @@
     </div>
   </div>
 
-  <!-- BOTTOM NAV -->
   <div class="bottom-nav">
     <div class="nav-item active" id="nav-habits" onclick="showPage('habits')">
-      <div class="nav-icon">✅</div>
-      <div class="nav-label">Habits</div>
+      <div class="nav-icon">✅</div><div class="nav-label">Habits</div>
     </div>
     <div class="nav-item" id="nav-chart" onclick="showPage('chart')">
-      <div class="nav-icon">📊</div>
-      <div class="nav-label">Progress</div>
+      <div class="nav-icon">📊</div><div class="nav-label">Progress</div>
     </div>
     <div class="nav-item" id="nav-profile" onclick="showPage('profile')">
-      <div class="nav-icon">👤</div>
-      <div class="nav-label">Profile</div>
+      <div class="nav-icon">👤</div><div class="nav-label">Profile</div>
     </div>
   </div>
-
 </div>
 
 <div class="toast" id="toast"></div>
 
-<!-- FIREBASE -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
-  import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut as fbSignOut }
+  import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut as fbSignOut }
     from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-  import { getFirestore, collection, doc, setDoc, getDoc, onSnapshot, deleteDoc, updateDoc }
+  import { getFirestore, collection, doc, setDoc, onSnapshot, deleteDoc, updateDoc }
     from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
   const firebaseConfig = {
@@ -519,13 +359,13 @@
     projectId: "my-haibit",
     storageBucket: "my-haibit.firebasestorage.app",
     messagingSenderId: "637470525031",
-    appId: "1:637470525031:web:47b1bc97e334c24017f6c2",
-    measurementId: "G-XHDMVWDKDE"
+    appId: "1:637470525031:web:47b1bc97e334c24017f6c2"
   };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
+  const firebaseApp = initializeApp(firebaseConfig);
+  const auth = getAuth(firebaseApp);
+  const db = getFirestore(firebaseApp);
+  const provider = new GoogleAuthProvider();
 
   let currentUser = null;
   let habits = [];
@@ -534,31 +374,33 @@
 
   const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
-  function todayKey() {
-    return new Date().toISOString().split('T')[0];
-  }
+  function todayKey() { return new Date().toISOString().split('T')[0]; }
 
   function getLast7Keys() {
     return Array.from({length:7}, (_,i) => {
-      const d = new Date();
-      d.setDate(d.getDate() - 6 + i);
+      const d = new Date(); d.setDate(d.getDate()-6+i);
       return d.toISOString().split('T')[0];
     });
   }
 
-  // AUTH
-  window.signInWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
-    try { await signInWithRedirect(auth, provider); }
-    catch(e) { console.error(e); }
+  // Redirect result handle karo
+  getRedirectResult(auth).then(result => {
+    if (result && result.user) {
+      document.getElementById('auth-loading').style.display = 'none';
+    }
+  }).catch(err => {
+    console.error(err);
+    document.getElementById('auth-loading').style.display = 'none';
+    document.getElementById('login-btn').disabled = false;
+  });
+
+  window.signInWithGoogle = () => {
+    document.getElementById('auth-loading').style.display = 'block';
+    document.getElementById('login-btn').disabled = true;
+    signInWithRedirect(auth, provider);
   };
 
-  window.signOut = async () => {
-    await fbSignOut(auth);
-    document.getElementById('auth-screen').style.display = 'flex';
-    document.getElementById('app').style.display = 'none';
-  };
-  await getRedirectResult(auth);
+  window.doSignOut = async () => { await fbSignOut(auth); };
 
   onAuthStateChanged(auth, user => {
     if (user) {
@@ -568,8 +410,11 @@
       setupUser(user);
       loadHabits();
     } else {
+      currentUser = null; habits = [];
       document.getElementById('auth-screen').style.display = 'flex';
       document.getElementById('app').style.display = 'none';
+      document.getElementById('auth-loading').style.display = 'none';
+      document.getElementById('login-btn').disabled = false;
     }
   });
 
@@ -586,7 +431,6 @@
     document.getElementById('profile-email').textContent = user.email;
   }
 
-  // LOAD HABITS
   function loadHabits() {
     if (!currentUser) return;
     const ref = collection(db, 'users', currentUser.uid, 'habits');
@@ -595,11 +439,9 @@
       snap.forEach(d => habits.push({ id: d.id, ...d.data() }));
       renderHabits();
       updateStats();
-      updateChart();
     });
   }
 
-  // ADD HABIT
   window.addHabit = async () => {
     const input = document.getElementById('habit-input');
     const name = input.value.trim();
@@ -616,23 +458,21 @@
     if (e.key === 'Enter') window.addHabit();
   });
 
-  // TOGGLE DONE
   window.toggleHabit = async (id) => {
     const h = habits.find(x => x.id === id);
     if (!h) return;
     const key = todayKey();
-    const newHistory = { ...h.history, [key]: !h.history[key] };
-    await updateDoc(doc(db, 'users', currentUser.uid, 'habits', id), { history: newHistory });
+    await updateDoc(doc(db, 'users', currentUser.uid, 'habits', id), {
+      history: { ...h.history, [key]: !h.history[key] }
+    });
   };
 
-  // DELETE
   window.deleteHabit = async (id) => {
     if (!confirm('Yeh habit delete karein?')) return;
     await deleteDoc(doc(db, 'users', currentUser.uid, 'habits', id));
     showToast('Habit delete ho gayi');
   };
 
-  // SAVE NOTE
   window.saveNote = async (id) => {
     const ta = document.getElementById('note-' + id);
     if (!ta) return;
@@ -640,25 +480,16 @@
     showToast('Note save ho gaya!');
   };
 
-  // TOGGLE SECTIONS
-  window.toggleReminder = (id) => {
-    const row = document.getElementById('rem-row-' + id);
-    row.classList.toggle('show');
-  };
+  window.toggleReminder = (id) => { document.getElementById('rem-row-' + id).classList.toggle('show'); };
+  window.toggleNote = (id) => { document.getElementById('note-row-' + id).classList.toggle('show'); };
 
-  window.toggleNote = (id) => {
-    const row = document.getElementById('note-row-' + id);
-    row.classList.toggle('show');
-  };
-
-  // SET REMINDER
   window.setReminder = async (id) => {
-    const timeEl = document.getElementById('time-' + id);
-    const time = timeEl.value;
+    const time = document.getElementById('time-' + id).value;
     if (!time) return;
     await updateDoc(doc(db, 'users', currentUser.uid, 'habits', id), { reminder: time });
     scheduleNotification(id, time);
-    showToast('Reminder set ho gaya! ⏰ ' + time);
+    showToast('Reminder set! ⏰ ' + time);
+    renderHabits();
   };
 
   function scheduleNotification(habitId, time) {
@@ -668,66 +499,65 @@
     const next = new Date();
     next.setHours(h, m, 0, 0);
     if (next <= now) next.setDate(next.getDate() + 1);
-    const delay = next - now;
     setTimeout(() => {
       const habit = habits.find(x => x.id === habitId);
       if (habit && !habit.history[todayKey()]) {
         new Notification('⏰ HabitZ Reminder', {
           body: `"${habit.name}" abhi tak complete nahi hua!`,
-          icon: 'icon.png'
+          icon: '/icon.png'
         });
-        scheduleNotification(habitId, time);
-      } else {
-        scheduleNotification(habitId, time);
       }
-    }, delay);
+      scheduleNotification(habitId, time);
+    }, next - now);
   }
 
-  // NOTIFICATIONS
   window.requestNotifPermission = async () => {
     const perm = await Notification.requestPermission();
     const el = document.getElementById('notif-status');
     if (perm === 'granted') {
-      el.textContent = '✅ Notifications allowed! Ab reminders aayenge.';
-      el.style.color = 'var(--green)';
+      el.textContent = '✅ Notifications allowed!';
+      el.style.color = '#00d9a5';
       habits.forEach(h => { if (h.reminder) scheduleNotification(h.id, h.reminder); });
     } else {
-      el.textContent = '❌ Permission nahi mili. Settings se allow karo.';
-      el.style.color = 'var(--accent)';
+      el.textContent = '❌ Permission nahi mili.';
+      el.style.color = '#e94560';
     }
   };
 
-  // RENDER HABITS
+  function getStreak(history) {
+    let streak = 0; const d = new Date();
+    while (true) {
+      const k = d.toISOString().split('T')[0];
+      if (history[k]) { streak++; d.setDate(d.getDate()-1); } else break;
+    }
+    return streak;
+  }
+
   function renderHabits() {
     const list = document.getElementById('habit-list');
     const today = todayKey();
     const keys = getLast7Keys();
-    const todayIndex = new Date().getDay();
-
     if (habits.length === 0) {
       list.innerHTML = `<div class="empty-state"><div class="empty-emoji">🌱</div><div>Koi habit nahi hai abhi<br/>Upar se add karo!</div></div>`;
       return;
     }
-
     list.innerHTML = habits.map(h => {
       const isDone = !!h.history[today];
       const streak = getStreak(h.history);
-      const weekDots = keys.map((k, i) => {
+      const weekDots = keys.map(k => {
         const filled = !!h.history[k];
         const isToday = k === today;
-        const dayName = DAYS[(new Date(k).getDay())];
         return `<div class="day-item">
-          <div class="day-dot ${filled ? 'filled' : ''} ${isToday ? 'today-dot' : ''}">${filled ? '✓' : ''}</div>
-          <div class="day-name">${dayName}</div>
+          <div class="day-dot ${filled?'filled':''} ${isToday?'today-dot':''}">${filled?'✓':''}</div>
+          <div class="day-name">${DAYS[new Date(k).getDay()]}</div>
         </div>`;
       }).join('');
-
-      return `<div class="habit-card ${isDone ? 'done' : ''}" id="card-${h.id}">
+      return `<div class="habit-card ${isDone?'done':''}">
         <div class="habit-main">
-          <div class="check-circle ${isDone ? 'done' : ''}" onclick="toggleHabit('${h.id}')">${isDone ? '✓' : ''}</div>
+          <div class="check-circle ${isDone?'done':''}" onclick="toggleHabit('${h.id}')">${isDone?'✓':''}</div>
           <div class="habit-info">
-            <div class="habit-name ${isDone ? 'done' : ''}">${h.name}</div>
-            <div class="habit-meta">🔥 ${streak} din streak ${h.reminder ? '⏰ ' + h.reminder : ''}</div>
+            <div class="habit-name ${isDone?'done':''}">${h.name}</div>
+            <div class="habit-meta">🔥 ${streak} din streak${h.reminder?' · ⏰ '+h.reminder:''}</div>
           </div>
           <div class="habit-actions">
             <button class="icon-btn" onclick="toggleReminder('${h.id}')">⏰</button>
@@ -737,132 +567,96 @@
         </div>
         <div class="week-row">${weekDots}</div>
         <div class="reminder-row" id="rem-row-${h.id}">
-          <input type="time" class="time-input" id="time-${h.id}" value="${h.reminder || ''}" />
+          <input type="time" class="time-input" id="time-${h.id}" value="${h.reminder||''}" />
           <button class="set-reminder-btn" onclick="setReminder('${h.id}')">Set ⏰</button>
-          ${h.reminder ? `<span class="reminder-badge">${h.reminder}</span>` : ''}
+          ${h.reminder?`<span class="reminder-badge">${h.reminder}</span>`:''}
         </div>
         <div class="note-row" id="note-row-${h.id}">
-          <textarea id="note-${h.id}" placeholder="Koi note likhna hai?" onblur="saveNote('${h.id}')">${h.note || ''}</textarea>
+          <textarea id="note-${h.id}" placeholder="Koi note likhna hai?" onblur="saveNote('${h.id}')">${h.note||''}</textarea>
         </div>
       </div>`;
     }).join('');
   }
 
-  // STATS
   function updateStats() {
     const today = todayKey();
     const done = habits.filter(h => h.history[today]).length;
     const miss = habits.length - done;
-    const bestStreak = habits.reduce((mx, h) => Math.max(mx, getStreak(h.history)), 0);
-    const pct = habits.length ? Math.round(done / habits.length * 100) : 0;
-
+    const best = habits.reduce((mx,h) => Math.max(mx, getStreak(h.history)), 0);
+    const pct = habits.length ? Math.round(done/habits.length*100) : 0;
     document.getElementById('s-done').textContent = done;
     document.getElementById('s-miss').textContent = miss;
-    document.getElementById('s-streak').textContent = '🔥' + bestStreak;
-    document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('progress-text').textContent = done + ' of ' + habits.length + ' complete';
-    document.getElementById('progress-pct').textContent = pct + '%';
+    document.getElementById('s-streak').textContent = '🔥'+best;
+    document.getElementById('progress-fill').style.width = pct+'%';
+    document.getElementById('progress-text').textContent = done+' of '+habits.length+' complete';
+    document.getElementById('progress-pct').textContent = pct+'%';
     document.getElementById('c-total').textContent = habits.length;
-    document.getElementById('c-best').textContent = bestStreak + '🔥';
+    document.getElementById('c-best').textContent = best+'🔥';
   }
 
-  function getStreak(history) {
-    let streak = 0;
-    const d = new Date();
-    while (true) {
-      const k = d.toISOString().split('T')[0];
-      if (history[k]) { streak++; d.setDate(d.getDate() - 1); } else break;
-    }
-    return streak;
-  }
-
-  // CHART
-  function updateChart() {
-    const keys = getLast7Keys();
-    const labels = keys.map(k => DAYS[new Date(k).getDay()]);
-    const data = keys.map(k => {
-      if (!habits.length) return 0;
-      return Math.round(habits.filter(h => h.history[k]).length / habits.length * 100);
-    });
-    const weekAvg = Math.round(data.reduce((a,b) => a+b, 0) / 7);
-    document.getElementById('c-week').textContent = weekAvg + '%';
-
-    if (chartInstance) chartInstance.destroy();
-    const ctx = document.getElementById('weekChart');
-    if (!ctx) return;
-    chartInstance = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels,
-        datasets: [{
-          data,
-          backgroundColor: data.map((_, i) => keys[i] === todayKey() ? '#e94560' : '#00d9a5'),
-          borderRadius: 8,
-          label: 'Completion %'
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          y: { min: 0, max: 100, ticks: { callback: v => v + '%', color: '#888aaa', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
-          x: { ticks: { color: '#888aaa', font: { size: 11 } }, grid: { display: false } }
-        }
-      }
-    });
-  }
-
-  // DATE
-  function updateDate() {
-    const d = new Date();
-    const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('date-bar').textContent = d.toLocaleDateString('hi-IN', opts);
-  }
-  updateDate();
-
-  // NAV
   window.showPage = (page) => {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    document.getElementById('page-' + page).classList.add('active');
-    document.getElementById('nav-' + page).classList.add('active');
+    document.getElementById('page-'+page).classList.add('active');
+    document.getElementById('nav-'+page).classList.add('active');
     if (page === 'chart') updateChart();
   };
 
   window.showProfile = () => window.showPage('profile');
 
-  // PWA INSTALL
+  function updateChart() {
+    const keys = getLast7Keys();
+    const labels = keys.map(k => DAYS[new Date(k).getDay()]);
+    const data = keys.map(k => !habits.length ? 0 : Math.round(habits.filter(h=>h.history[k]).length/habits.length*100));
+    const avg = Math.round(data.reduce((a,b)=>a+b,0)/7);
+    document.getElementById('c-week').textContent = avg+'%';
+    if (chartInstance) chartInstance.destroy();
+    const ctx = document.getElementById('weekChart');
+    if (!ctx) return;
+    chartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: { labels, datasets: [{ data, backgroundColor: data.map((_,i) => keys[i]===todayKey()?'#e94560':'#00d9a5'), borderRadius:8, label:'%' }] },
+      options: {
+        responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:false} },
+        scales:{
+          y:{ min:0, max:100, ticks:{callback:v=>v+'%',color:'#888aaa',font:{size:11}}, grid:{color:'rgba(255,255,255,0.05)'} },
+          x:{ ticks:{color:'#888aaa',font:{size:11}}, grid:{display:false} }
+        }
+      }
+    });
+  }
+
+  function updateDate() {
+    document.getElementById('date-bar').textContent = new Date().toLocaleDateString('hi-IN', {weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  }
+  updateDate();
+
   window.addEventListener('beforeinstallprompt', e => {
-    e.preventDefault();
-    deferredPrompt = e;
+    e.preventDefault(); deferredPrompt = e;
     document.getElementById('install-banner').classList.add('show');
   });
 
   window.installApp = async () => {
     if (!deferredPrompt) return;
     deferredPrompt.prompt();
-    const result = await deferredPrompt.userChoice;
-    if (result.outcome === 'accepted') {
+    const r = await deferredPrompt.userChoice;
+    if (r.outcome === 'accepted') {
       document.getElementById('install-banner').classList.remove('show');
       showToast('App install ho gaya! 🎉');
     }
     deferredPrompt = null;
   };
 
-  // SERVICE WORKER
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
 
-  // TOAST
   window.showToast = (msg) => {
     const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
+    t.textContent = msg; t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 2500);
   };
 </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 </body>
 </html>
+
+You are out of free messages until 2:50 AM
